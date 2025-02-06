@@ -1,6 +1,2 @@
-numpy
-pandas
-scikit-learn
-imbalanced-learn
-seaborn
-matplotlib
+streamlit
+streamlit_option_menu
