@@ -1,6 +1,6 @@
 import os
-import pickle # pre trained model loading
-import streamlit as st    # web app
+import pickle 
+import streamlit as st    
 from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title='Prediction of Disease Outbreaks',
@@ -109,10 +109,10 @@ if selected == 'Heart Disease Prediction':
 if selected == 'Parkinsons prediction':
     st.title('Parkinsons Disease Prediction using ML')
     
-    # Create columns for user input
+    
     col1, col2, col3 = st.columns(3)
     
-    # Collect input data from the user
+   
     with col1:
         MDVP_Fo = st.text_input('MDVP:Fo(Hz)')
     with col2:
@@ -165,28 +165,28 @@ if selected == 'Parkinsons prediction':
     with col1:
         PPE = st.text_input('PPE')
     
-    # Prediction result variable
+    
     parkinsons_diagnosis = ''
     
-    # Button to trigger prediction
+   
     if st.button('Parkinsons Test Result'):
-        # Create a list of user inputs and convert them to float
+       
         user_input = [MDVP_Fo, MDVP_Fhi, MDVP_Flo, MDVP_Jitter_percent, MDVP_Jitter_Abs,
                       MDVP_RAP, MDVP_PPQ, Jitter_DDP, MDVP_Shim, MDVP_Shim_dB,
                       Shimmer_APQ3, Shimmer_APQ5, MDVP_APQ, Shimmer_DDA, NHR, HNR, RPDE,
                       DFA, spread1, spread2, D2, PPE]
         
-        # Convert user inputs to float type for prediction
+       
         user_input = [float(x) for x in user_input]
         
-        # Predict using the loaded model
+        
         parkinsons_prediction = parkinsons_model.predict([user_input])
         
-        # Determine the result
+       
         if parkinsons_prediction[0] == 1:
             parkinsons_diagnosis = 'The person has Parkinsons disease'
         else:
             parkinsons_diagnosis = 'The person does not have Parkinsons disease'
         
-        # Display result
+       
         st.success(parkinsons_diagnosis)
