@@ -6,9 +6,10 @@ from streamlit_option_menu import option_menu
 st.set_page_config(page_title='Prediction of Disease Outbreaks',
                    layout='wide',
                    page_icon="🧑‍⚕️")
-diabetes_model_path = os.path.join("models", "diabetes_model.sav")
-heart_disease_model_path = os.path.join("models", "heart_model.sav")
-parkinsons_model_path = os.path.join("models", "parkinsons_model.sav")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Get current script directory
+diabetes_model_path = os.path.join(BASE_DIR, "models", "diabetes_model.sav")
+heart_disease_model_path = os.path.join(BASE_DIR, "models", "heart_model.sav")
+parkinsons_model_path = os.path.join(BASE_DIR, "models", "parkinsons_model.sav")
 
 # Load models from these relative paths
 diabetes_model = pickle.load(open(diabetes_model_path, 'rb'))
