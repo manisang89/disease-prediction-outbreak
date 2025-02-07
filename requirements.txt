@@ -1,2 +1,9 @@
-streamlit
-streamlit_option_menu
+imbalanced-learn==0.13.0
+imblearn==0.0
+numpy==2.2.2
+scikit-learn==1.6.1
+pandas==2.2.3
+seaborn==0.13.2
+streamlit==1.42.0
+streamlit-option-menu==0.4.0
+toml==0.10.2
